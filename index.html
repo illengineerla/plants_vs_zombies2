@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<style type="text/css">
+		img{
+			width: 100px; 
+			position: absolute; 
+			display: none;
+		}
+
+	
+	</style>
+</head>
+<body>
+	<div style="background-image: url(game.png); height: 1000px; background-size: 100% 100%">
+		
+		<button class="btn btn-warning btn_fl" style="position: absolute;  margin-left: 20%; margin-top: 3%">Увеличить цветы</button>
+		<button class="btn btn-success btn_sh" style="position: absolute;  margin-left: 30%; margin-top: 3%">Увеличить горох</button>
+		<button class="btn btn-warning btn_fl_up" style="position: absolute;  margin-left: 40%; margin-top: 3%">Усилить цветы</button>
+		<button class="btn btn-success btn_sh_up" style="position: absolute;  margin-left: 50%; margin-top: 3%">Усилить горох</button>
+		<button class="btn btn-secondary btn_zb" style="position: absolute;  margin-left: 60%; margin-top: 3%">Нашествие зомби</button>
+
+		<!--цветы 1 ряд-->
+		<img class="flower" src="sunflower.png"  style=" margin-left: 33%; margin-top: 13%; ">
+		<img class="flower" src="sunflower.png"  style=" margin-left: 33%; margin-top: 19%; ">
+		<img class="flower" src="sunflower.png"  style=" margin-left: 33%; margin-top: 25%; ">
+		<img class="flower" src="sunflower.png"  style=" margin-left: 33%; margin-top: 31%; ">
+		<img class="flower" src="sunflower.png"  style=" margin-left: 33%; margin-top: 37%; ">
+		<button class="flower_btn" style="color: yellow; font-weight: bold; position: absolute; margin-left: 33%; margin-top: 17%; ">PLANT</button>	
+		<button class="flower_btn" style="color: yellow; font-weight: bold; position: absolute; margin-left: 33%; margin-top: 23%; ">PLANT</button>
+		<button class="flower_btn" style="color: yellow; font-weight: bold; position: absolute; margin-left: 33%; margin-top: 29%; ">PLANT</button>
+		<button class="flower_btn" style="color: yellow; font-weight: bold; position: absolute; margin-left: 33%; margin-top: 35%; ">PLANT</button>
+		<button class="flower_btn" style="color: yellow; font-weight: bold; position: absolute; margin-left: 33%; margin-top: 41%; ">PLANT</button>
+
+		<!--горох 2 ряд-->
+		<img class="shooter" src="peashooter.png"  style=" margin-left: 40%; margin-top: 13%; ">		
+		<img class="shooter" src="peashooter.png"  style=" margin-left: 40%; margin-top: 19%; ">	
+		<img class="shooter" src="peashooter.png"  style=" margin-left: 40%; margin-top: 25%; ">	
+		<img class="shooter" src="peashooter.png"  style=" margin-left: 40%; margin-top: 31%; ">
+		<img class="shooter" src="peashooter.png"  style=" margin-left: 40%; margin-top: 37%; ">		
+		<button class="shooter_btn" style="color: green; font-weight: bold; position: absolute; margin-left: 40%; margin-top: 17%; ">PLANT</button>
+		<button class="shooter_btn" style="color: green; font-weight: bold; position: absolute; margin-left: 40%; margin-top: 23%; ">PLANT</button>	
+		<button class="shooter_btn" style="color: green; font-weight: bold; position: absolute; margin-left: 40%; margin-top: 29%; ">PLANT</button>
+		<button class="shooter_btn" style="color: green; font-weight: bold; position: absolute; margin-left: 40%; margin-top: 35%; ">PLANT</button>
+		<button class="shooter_btn" style="color: green; font-weight: bold; position: absolute; margin-left: 40%; margin-top: 41%; ">PLANT</button>
+
+		<!--нашествие зомби-->
+		<img class="zombie" src="zombie.png" style="margin-left: 60%; margin-top: 13%;">
+		<img class="zombie" src="zombie.png" style="margin-left: 60%; margin-top: 19%;">
+		<img class="zombie" src="zombie.png" style="margin-left: 60%; margin-top: 25%;">
+		<img class="zombie" src="zombie.png" style="margin-left: 60%; margin-top: 31%;">
+		<img class="zombie" src="zombie.png" style="margin-left: 60%; margin-top: 37%;">
+
+
+		
+									
+	</div>
+
+<script>
+
+	let flowers = document.querySelectorAll(".flower");
+	let flower_btn = document.querySelectorAll(".flower_btn");
+
+	let shooter_btn = document.querySelectorAll(".shooter_btn");
+	let shooter = document.querySelectorAll(".shooter");
+
+	let btn_fl = document.querySelectorAll(".btn_fl");
+	let btn_sh = document.querySelectorAll(".btn_sh");
+
+	let score = 0;
+
+	let btn_sh_up = document.querySelectorAll(".btn_sh_up")
+	let btn_fl_up = document.querySelectorAll(".btn_fl_up")
+
+	let btn_zb = document.querySelectorAll(".btn_zb")
+	let btn_zb_up = document.querySelectorAll(".btn_zb_up")
+
+	//нажатие на цветы
+	flower_btn[0].onclick = function(){
+		flowers[0].style.display = "block"
+		flower_btn[0].style.display = "none"
+	}    
+	flower_btn[1].onclick = function(){
+		flowers[1].style.display = "block"
+		flower_btn[1].style.display = "none"
+	}   
+	flower_btn[2].onclick = function(){
+		flowers[2].style.display = "block"
+		flower_btn[2].style.display = "none"
+	}   
+	flower_btn[3].onclick = function(){
+		flowers[3].style.display = "block"
+		flower_btn[3].style.display = "none"
+	}   
+	flower_btn[4].onclick = function(){
+		flowers[4].style.display = "block"
+		flower_btn[4].style.display = "none"
+	}
+	btn_fl[0].onclick = function(){
+		for(let fl_index = 0; fl_index<6; fl_index = fl_index + 1){
+			flowers[fl_index].style.width = '200px'
+		}
+	}
+	btn_fl_up[0].onclick = function(){
+		for(let fl_index_up = 0; fl_index_up<6; fl_index_up = fl_index_up + 1){
+			flowers[fl_index_up].src = 'dubl_sunflower.png'
+		}
+	}
+
+
+	//нажатие на горох
+	shooter_btn[0].onclick = function(){
+		shooter[0].style.display = "block"
+		shooter_btn[0].style.display = "none"
+	}   
+	shooter_btn[1].onclick = function(){
+		shooter[1].style.display = "block"
+		shooter_btn[1].style.display = "none"
+	}   
+	shooter_btn[2].onclick = function(){
+		shooter[2].style.display = "block"
+		shooter_btn[2].style.display = "none"
+	}   
+	shooter_btn[3].onclick = function(){
+		shooter[3].style.display = "block"
+		shooter_btn[3].style.display = "none"
+	}   
+	shooter_btn[4].onclick = function(){
+		shooter[4].style.display = "block"
+		shooter_btn[4].style.display = "none"
+	}
+	btn_sh[0].onclick = function(){
+		for(let sh_index = 0; sh_index<6; sh_index = sh_index + 1){
+			shooter[sh_index].style.width = '200px'
+		}
+	}
+	btn_sh_up[0].onclick = function(){
+		for(let sh_index_up = 0; sh_index_up<6; sh_index_up = sh_index_up + 1){
+			shooter[sh_index_up].src = 'cap_shooter.png'
+		}
+	}
+
+
+	//нашествие зомби
+	btn_zb[0].onclick = function(){
+		for(let zb_index = 0; zb_index<6; zb_index = zb_index + 1){
+			zombie[zb_index].style.display = "block"
+		}
+	}
+	btn_zb_up[0].onclick = function(){
+		for(let zb_index_up = 0; zb_index_up<6; zb_index_up = zb_index_up + 1){
+			zombie[zb_index_up].style.display = "block"
+		}
+	}
+
+</script>
+</body>
+</html>//закрывай за собой блинб
